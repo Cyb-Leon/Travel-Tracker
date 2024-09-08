@@ -1,0 +1,18 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.province path {
+    fill: #e5e7eb;
+    stroke: #374151;
+    stroke-width: 1;
+    transition: fill 0.3s ease;
+}
+
+.province path:hover {
+    fill: #93c5fd;
+}
+
+.province.visited {
+    fill: #60a5fa;
+}

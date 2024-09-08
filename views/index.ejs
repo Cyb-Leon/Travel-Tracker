@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>South Africa Travel Map</title>
+    <link href="/styles/styles.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen">
+  <form action="/add" method="post">
+    <input type="text" name="province" autofocus placeholder="<%= locals.error ? error :  'Enter province name'%>">
+    <button type="submit">Add</button>
+  </form>
+
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold mb-6 text-center">South Africa Travel Map</h1>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="mb-4">
+                <h2 class="text-xl font-semibold mb-2">Provinces Visited</h2>
+                <ul id="visited-provinces" class="list-disc pl-5">
+                    <!-- Visited provinces will be populated here -->
+                </ul>
+            </div>
+            <div class="w-full max-w-3xl mx-">
+                <%- include('svg-map') %>
+            </div>
+        </div>
+    </div>
+    <!-- <script src="/styles/js/map.js"></script> -->
+    <script>
+      const province_codes = "<%= provinces %>".split(",") 
+      console.log(typeof ("<%= provinces %>"))
+      province_codes.forEach(code => {
+        document.getElementById(code).style.fill = 'teal'
+      });
+  
+    </script>
+</body>
+</html>
