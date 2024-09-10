@@ -18,14 +18,16 @@ app.get("/", async (req, res) => {
     provinces.push(province.province_code);
   });
   console.log(result.rows);
-  res.render("index.ejs", { provinces: provinces, total: provinces.length });
+  res.render("index.ejs",{ provinces: provinces});
 });
 
 //add new pin/location drop
 app.post("/add", async (req, res) => {
   const newProvince = req.body.province;
   //check province code
-
+    // const  checkProvince = await Traveldatabase.query(
+    //     "SELECT province_code FROM visited_provinces WHERE province_code = ($1)", [newProvince]
+    //   )
   //assume correct input type
   try {
     //insert into db and catch any errors
@@ -41,6 +43,8 @@ app.post("/add", async (req, res) => {
     res.status(404).send("You have already visited that province");
   }
 });
+
+
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
