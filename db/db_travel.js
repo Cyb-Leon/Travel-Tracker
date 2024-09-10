@@ -1,11 +1,13 @@
 import pg from "pg";
+import { configDotenv } from "dotenv";
 
+configDotenv();
 const db = new pg.Client({
-    user: process.env.USERNAME,
-    host: process.env.HOST,
-    database: process.env.DATABASE,
-    password: process.env.PASSWORD,
-    port: process.env.PORT,
+    user: process.env.gresUsr,
+    host: process.env.gresHOST,
+    database: process.env.gresDB,
+    password: process.env.gresPSW,
+    port: process.env.gressPORT,
   });
   db.connect();
 
