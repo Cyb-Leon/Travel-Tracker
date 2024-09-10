@@ -32,26 +32,14 @@
   </div>
 
   <script>
-          // provinces.forEach(province => {
-          //     const path = document.getElementById(id);
-          //     path.style.fill = visitedProvinces.includes(province.province_code) ? '#3b82f6' : '#e5e7eb';
-          // });
+
           const province_codes = "<%= provinces %>".split(",") 
       console.log(typeof ("<%= provinces %>"))
       province_codes.forEach(code => {
         document.getElementById(code).style.fill = 'teal'
       });
   
-      // // function updateList() {
-      //     const list = document.getElementById('visitedList');
-      //     if (visitedProvinces.length === 0) {
-      //         list.innerHTML = '<li class="text-gray-500">No provinces visited yet. Click on the map or use the input above to add provinces.</li>';
-      //     } else {
-      //         list.innerHTML = visitedProvinces.map(id => 
-      //             `<li class="text-gray-600">${provinces.find(p => p.id === id).name}</li>`
-      //         ).join('');
-      //     }
-      //   }
+
       function getProvincePath(id){
        switch (id) {
           case 'ZA-WC':
