@@ -563,9 +563,6 @@ video {
 }
 
 body {
-  height: 100%;
-}
-body {
   background: #21252b;
 
   color: #d3ddef;
@@ -574,7 +571,6 @@ body {
 .province{
   cursor: pointer;
   transition: fill 0.2s;
-  margin-left: 15rem;
 }
 .province path {
   fill: #383d46;
@@ -593,7 +589,5 @@ body {
 @media screen and (max-width: 767px) {
   .province {
     max-height: calc(100% - 6rem);
-    margin-left: 7rem;
-    margin-top: 6rem;
   }
 }
