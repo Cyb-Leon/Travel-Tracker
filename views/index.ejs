@@ -40,15 +40,12 @@
   </div>
 
   <script>
-
-          const province_codes = "<%= provinces %>"
+          let province_codes = "<%= provinces %>";
           console.log(province_codes);
           //change back to json
-          let resJSON = JSON.parse(province_codes);
-      console.log(typeof ("<%= provinces %>"))
-      console.log(resJSON);
+      console.log(typeof ("<%= provinces %>"));
       province_codes.forEach(code => {
-        document.getElementById(code.province_code).style.fill = 'teal';
+        document.getElementById(code.prov_code).style.fill = 'teal';
       });
   </script>
 </body>

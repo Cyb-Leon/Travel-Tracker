@@ -51,13 +51,14 @@ app.post("/add", async (req, res) => {
     try {
       //check province code with visited provinces
       const checkProvince = await Traveldatabase.query(
-        "SELECT province_name FROM visited_provinces WHERE LOWER(province_name) LIKE '%' || $1 || '%';",[newProvince.toLowerCase()]
+        "SELECT province_name FROM visited_provinces WHERE LOWER(province_name) = $1",[newProvince.toLowerCase()]
       );
  
       //store new visisted province
       let visitednewProv = sa_provinces.find( (sa_province) =>  sa_province.prov_code == newProvince);
   
       //insert into db and catch any errors
+      console.log(visitednewProv);
       const db_res = await Traveldatabase.query(
         "INSERT INTO visited_provinces (province_code,province_name) VALUES ($1,$2)",[visitednewProv.prov_code, visitednewProv.prov_name]
       );
